@@ -29,6 +29,7 @@ class App extends Component {
   componentDidMount() {
     const { pieceQueue } = this.state;
     if(pieceCount >= 7) pieceCount = 7;
+    else if(pieceCount <= 1) pieceCount = 1;
     let temp = pieceQueue.concat(shuffle(grabBag));
     this.setState({ pieceQueue: temp });
   }
