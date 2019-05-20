@@ -31,13 +31,3 @@
     transform: rotate(360deg);
   }
 }
-
-
-.title {
-  font-size: 70px;
-  color: rgb(46, 188, 244);
-}
-
-.title:hover {
-  cursor: default;
-}

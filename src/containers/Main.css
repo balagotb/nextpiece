@@ -8,4 +8,11 @@
 
 h1.title {
     font-family: 'Raleway', sans-serif;
+    font-size: 70px;
+    color: rgb(46, 188, 244);
 }
+
+h1.title:hover {
+    cursor: default;
+}
+  
