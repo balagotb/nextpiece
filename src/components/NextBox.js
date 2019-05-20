@@ -1,7 +1,7 @@
 import React from 'react';
 import './NextBox.css';
 
-const NextBox = ({piece}) => {
+const NextBox = ({piece, leading=false, onNextPiece}) => {
     let pieceImg;
     switch(piece){
         case 'I': pieceImg = require('./img/tetris_I.png'); break;
@@ -15,7 +15,7 @@ const NextBox = ({piece}) => {
     }
 
     return (
-        <div className='NextBox'>
+        <div className={'box ' + (leading ? 'leading' : 'next')} onClick={onNextPiece}>
             <img src={pieceImg} alt={piece} /> 
         </div>
     )

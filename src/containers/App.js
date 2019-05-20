@@ -36,11 +36,12 @@ class App extends Component {
 
   render(){
     const { pieceQueue } = this.state;
-    // Tentative return statement
     return(
       <div className='App'>
         <Main>
-          <VisualQueue pieceCount={pieceCount} pieceQueue={pieceQueue} onNextPiece={this.onNextPiece} />
+          <VisualQueue pieceQueue={pieceQueue.slice(0, pieceCount)} onNextPiece={this.onNextPiece} />
+          <h1>pieceQueue: {pieceQueue.toString()}</h1>
+          {/* <h1>pieceCounter: {Object.entries(this.state.pieceCounter).toString()}</h1> */}
         </Main>
       </div>
     )
