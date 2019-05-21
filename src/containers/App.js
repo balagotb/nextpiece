@@ -9,8 +9,8 @@ import VisualCounter from '../components/VisualCounter';
 
 let pieceCount = 4;
 let counter = 0;
-const grabBag = ['I', 'O', 'T', 'J', 'L', 'S', 'Z'];
-const clearCounter = {
+const pieceSet = ['I', 'O', 'T', 'J', 'L', 'S', 'Z'];
+const clearValues = {
   'I': 0,
   'O': 0, 
   'T': 0, 
@@ -25,7 +25,7 @@ class App extends Component {
     super();
     this.state = {
       pieceQueue: [],
-      pieceCounter: clearCounter
+      grabBag: clearValues
     }
   }
 
@@ -33,17 +33,17 @@ class App extends Component {
     const { pieceQueue } = this.state;
     if(pieceCount >= 7) pieceCount = 7;
     else if(pieceCount <= 1) pieceCount = 1;
-    const tempQueue = pieceQueue.concat(shuffle(grabBag));
-    this.setState({pieceQueue: tempQueue, pieceCounter: this.updatedCounter(tempQueue[0])});
+    const tempQueue = pieceQueue.concat(shuffle(pieceSet));
+    this.setState({pieceQueue: tempQueue, grabBag: this.updateCounter(tempQueue[0])});
   }
 
   render(){
-    const { pieceQueue, pieceCounter } = this.state;
+    const { pieceQueue, grabBag } = this.state;
     return(
       <div className='App'>
         <Main>
           <VisualQueue pieceQueue={pieceQueue.slice(0, pieceCount)} onNextPiece={this.onNextPiece} />
-          <VisualCounter pieceCounter={pieceCounter} />
+          <VisualCounter grabBag={grabBag} />
           {/* <h1>pieceQueue: {pieceQueue.toString()}</h1> */}
         </Main>
       </div>
@@ -53,21 +53,21 @@ class App extends Component {
   onNextPiece = () => {
     let tempQueue = this.state.pieceQueue;
     tempQueue.shift();
-    if(tempQueue.length <= (pieceCount - 1)) tempQueue = tempQueue.concat(shuffle(grabBag));
-    this.setState({pieceQueue: tempQueue, pieceCounter: this.updatedCounter(tempQueue[0])});
+    if(tempQueue.length <= (pieceCount - 1)) tempQueue = tempQueue.concat(shuffle(pieceSet));
+    this.setState({pieceQueue: tempQueue, grabBag: this.updateCounter(tempQueue[0])});
   }
 
-  updatedCounter = (piece) => {
-    let tempCount;
-    if(counter === 7){
+  updateCounter = (piece) => {
+    let tempBag;
+    if(counter >= 7){
       counter = 1;
-      tempCount = {...clearCounter};
+      tempBag = {...clearValues};
     }else {
       counter += 1;
-      tempCount = {...this.state.pieceCounter};
+      tempBag = {...this.state.grabBag};
     }
-    tempCount[piece] += 1;
-    return tempCount;
+    tempBag[piece] += 1;
+    return tempBag;
   }
 }
 
