@@ -42,6 +42,7 @@ class App extends Component {
     return(
       <div className='App'>
         <Main>
+          
           <VisualQueue pieceQueue={pieceQueue.slice(0, pieceCount)} onNextPiece={this.onNextPiece} />
           <VisualCounter grabBag={grabBag} />
           {/* <h1>pieceQueue: {pieceQueue.toString()}</h1> */}
