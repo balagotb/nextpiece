@@ -20,7 +20,7 @@ img.smallPiece.bright {
     filter: contrast(100%) brightness(100%);
 }
 
-img.smallPiece.dim {
+img.smallPiece.dimmed {
     filter: contrast(0%) brightness(50%);
 }
 
