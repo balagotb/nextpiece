@@ -1,8 +1,14 @@
-.counterTest {
-    background-color: rgba(0,0,0,0.50);
-    /* width: 400px;
-    height: 100%; */
-    margin: 10px 0 10px 0;
+.counterContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.counter {
+    background-color: rgba(0,0,0,0.40);
+    width: 400px;
+    height: 100%;
+    margin: 20px 0 20px 0;
+    border-radius: 10px;
 }
 
 img.smallPiece {
@@ -10,10 +16,16 @@ img.smallPiece {
     height: 50px;
 }
 
-img.bright {
+img.smallPiece.bright {
     filter: contrast(100%) brightness(100%);
 }
 
-img.dim {
+img.smallPiece.dim {
     filter: contrast(0%) brightness(50%);
+}
+
+@media only screen and (max-width: 400px) {
+    .counter {
+        border-radius: 0;
+    }
 }

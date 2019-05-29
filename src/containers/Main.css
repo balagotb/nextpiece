@@ -16,3 +16,8 @@ h1.title:hover {
     cursor: default;
 }
   
+@media only screen and (max-width: 500px) {
+    h1.title {
+        font-size: 56px;
+    }
+}
