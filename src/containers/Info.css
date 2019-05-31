@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300&display=swap');
 
-.halfgrid {
+.sectioncontainer {
     display: grid;
     grid-template-columns: 50% 50%;
 }
@@ -9,16 +9,16 @@
     background-color: rgb(46, 188, 244);
 }
 
-.info h1, p, ul {
+.infobox h1, p, ul {
     color: white;
 }
 
-.info h1 {
+.infobox h1 {
     font-family: 'Raleway', sans-serif;
     font-size: 3.5em;
 }
 
-.info p, ul {
+.infobox p, ul {
     font-family: 'Roboto', sans-serif;
     font-size: 1.2em;
     text-align: left
@@ -29,7 +29,8 @@
 }
 
 @media only screen and (max-width: 1000px) {
-    .halfgrid {
-        display: flex
+    .sectioncontainer {
+        display: flex;
+        flex-direction: column;
     }
 }
