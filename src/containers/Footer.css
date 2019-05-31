@@ -1,0 +1,24 @@
+.footer {
+    background-color: rgb(10, 19, 33);
+    min-height: 5em;
+    display: flex;
+    flex-direction: column
+}
+
+p {
+    color: white;
+}
+
+.regulartext {
+    display: inline-block;
+    margin: 0.7em;
+}
+
+.disclaimer {
+    display: inline-block;
+    margin: 0.5em;
+}
+
+.disclaimer p {
+    font-size: 12px;
+}

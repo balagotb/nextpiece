@@ -7,6 +7,7 @@ import Main from './Main';
 import VisualQueue from '../components/VisualQueue';
 import VisualCounter from '../components/VisualCounter';
 import Info from './Info';
+import Footer from './Footer';
 
 let pieceCount = 4;
 let counter = 0;
@@ -47,6 +48,7 @@ class App extends Component {
           <VisualCounter grabBag={grabBag} />
         </Main>
         <Info />
+        <Footer />
       </div>
     )
   }

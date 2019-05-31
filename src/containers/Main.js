@@ -4,7 +4,7 @@ import './Main.css';
 const Main = (props) => {
     return (
         <div className='main'>
-            <h1 className='tc title'>NextPiece.io</h1>
+            <h1 className='tc title'>NextPiece</h1>
             {props.children}
         </div>
     )
