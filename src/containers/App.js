@@ -6,6 +6,7 @@ import './App.css';
 import Main from './Main';
 import VisualQueue from '../components/VisualQueue';
 import VisualCounter from '../components/VisualCounter';
+import Info from './Info';
 
 let pieceCount = 4;
 let counter = 0;
@@ -44,8 +45,8 @@ class App extends Component {
         <Main>
           <VisualQueue pieceQueue={pieceQueue.slice(0, pieceCount)} onNextPiece={this.onNextPiece} />
           <VisualCounter grabBag={grabBag} />
-          {/* <h1>pieceQueue: {pieceQueue.toString()}</h1> */}
         </Main>
+        <Info />
       </div>
     )
   }
